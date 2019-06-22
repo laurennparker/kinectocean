@@ -18,31 +18,25 @@ import javax.swing.*;
  * @author LaurensGram
  */
 public class KinectOcean {
-
+    MyKinect kinect;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        KinectApp k = new KinectApp();
-        k.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MainFrame k = new MainFrame();
+        k.setDefaultCloseOperation(MainFrame.EXIT_ON_CLOSE);
         
-        Dimension d = new Dimension();
-        d.setSize(800, 800);
-        k.setPreferredSize(d);
-        JPanel p = new JPanel();
-        k.setContentPane(p);        
-        JLabel menuLabel = new JLabel("Main menu      ", SwingConstants.CENTER);        
-        //textLabel.setSize(new Dimension(0b111110100, 0b111110100));
-        //p.add(textLabel, BorderLayout.CENTER);
-        p.add(menuLabel);
-        p.setVisible(true);
-        k.pack();
-        JButton start = new JButton("Start Game");
+//        MyKinect console = new MyKinect();
+//        console.start(J4KSDK.SKELETON);
+//        printHead(console);
         
-        p.setBackground(Color.ORANGE);
-        //p.add();
-        p.add(start);
         
+        
+//        double head = console.getJoint(console.head);
+//        String s = "" + head;
+//        JLabel headcoord = new JLabel(s);
+//        p.add(headcoord,SwingConstants.LEFT);
+
         
         
         
@@ -52,6 +46,10 @@ public class KinectOcean {
         //Graphics g = x.getGraphics();
 
         
+    }
+    public static void printHead(MyKinect k){
+        double d = k.getJoint(MyKinect.head);
+        System.out.println("Head coordinate is " + d);
     }
 
     
